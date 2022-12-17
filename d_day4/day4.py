@@ -4,13 +4,13 @@ from pathlib import Path
 
 def solve_puzzle(groups):
     def group_to_set(group):
-        start, end = map(int, group.split('-'))
-        return set(range(start, end+1))
+        start, end = map(int, group.split("-"))
+        return set(range(start, end + 1))
 
     res_part_one = 0
     res_part_two = 0
     for group in groups:
-        a, b = (group_to_set(i) for i in group.split(','))
+        a, b = (group_to_set(i) for i in group.split(","))
         if not a.difference(b) or not b.difference(a):
             res_part_one += 1
         if a.intersection(b):
@@ -20,6 +20,6 @@ def solve_puzzle(groups):
 
 
 if __name__ == "__main__":
-    filepath = os.path.join(os.path.dirname(__file__), 'input.txt')
+    filepath = os.path.join(os.path.dirname(__file__), "input.txt")
     groups = Path(filepath).read_text().splitlines()
     solve_puzzle(groups)

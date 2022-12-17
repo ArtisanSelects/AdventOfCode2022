@@ -16,11 +16,11 @@ def solve_puzzle(calories):
             continue
         current_total += int(dish)
 
-    print(f'Part one (the elf with the most calories):\n{res_part_one}')
-    print(f'Part two (sum of the top three calorie-heavy elves):\n{sum(res_part_two)}')
+    print(f"Part one (the elf with the most calories):\n{res_part_one}")
+    print(f"Part two (sum of the top three calorie-heavy elves):\n{sum(res_part_two)}")
 
 
 if __name__ == "__main__":
-    filepath = os.path.join(os.path.dirname(__file__), 'input.txt')
+    filepath = os.path.join(os.path.dirname(__file__), "input.txt")
     calories = Path(filepath).read_text().splitlines()
     solve_puzzle(calories)
